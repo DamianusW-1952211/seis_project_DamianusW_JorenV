@@ -7,13 +7,19 @@
 #include <stdexcept>
 #include <fstream>
 #include "ByteStream.cpp"
+#include "Stack.cpp"
 
 int main()
 {
-	std::vector<uint8_t> v = {0x48, 0x65, 0x6C, 0x6C, 0x6F};
-	ByteStream bs = ByteStream(v);
+	Stack s = Stack();
 
-	std::cout <<  bs.readASCIIString() << std::endl;
+	s.push(300);
+	s.push(5);
+	s.push(666);
+	s.push(437);
+	s.push(432);
+
+	s.print();
 
     return 0;
 }
