@@ -34,11 +34,22 @@ Variable Stack::pop()
     return x;
 }
 
+Variable Stack::top()
+{
+    if(isEmpty()) exit(EXIT_FAILURE);
+
+    std::visit([](const auto &x) { std::cout << "the top is: " << x << std::endl;}, arr.back());
+
+    return arr.back();
+}
+
+//(https://stackoverflow.com/questions/62355613/stdvariant-cout-in-c)
 void Stack::print()
 {
-    for(int i = 0; i < arr.size(); ++i)
+    int size = arr.size() - 1;
+    for(int i = 0; i <= size; ++i)
     {
-        std::visit([](const auto &x) { std::cout << x << '\n';}, arr[i]);
+        std::visit([](const auto &x) { std::cout << x << std::endl;}, arr[size - i]);
     }
 
     std::cout <<  std::endl;

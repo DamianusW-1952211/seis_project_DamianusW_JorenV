@@ -14,6 +14,7 @@ public:
 
     void push(Variable x);
     Variable pop();
+    Variable top();
     
     int size();
     bool isEmpty();

@@ -13,11 +13,10 @@ int main()
 {
 	Stack s = Stack();
 
-	s.push(300);
-	s.push(5);
-	s.push(666);
-	s.push(437);
-	s.push(432);
+	s.push(300); s.push(5); s.push(666); s.push(437); s.push(432);
+	s.top();
+
+	std::cout << std::endl;
 
 	s.print();
 
